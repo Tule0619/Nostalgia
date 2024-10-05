@@ -36,7 +36,18 @@ public class IMDb
         "Halloween Night",
         "Calm Before The Storm",
         "Seafarers",
-        "The Tax Write-Off"
+        "The Tax Write-Off",
+        "The Musical",
+        "The Musical: The Movie",
+        "Lost in New Jersey",
+        "This Is A Call For Help",
+        "NullReferenceException",
+        "The Reimagining",
+        "V3",
+        "The Suffix!",
+        "Feat. Clyde",
+        "Unholy",
+        "Is This Enough?"
     };
 
     public IMDb(string title)
