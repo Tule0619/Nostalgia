@@ -54,7 +54,7 @@ public class TextType : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(_textMeshPro.preferredHeight > 25)
+		if(_textMeshPro.preferredHeight > GetComponent<RectTransform>().rect.height)
 		{
 			DeleteWords();
 		}
