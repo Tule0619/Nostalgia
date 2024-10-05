@@ -8,15 +8,14 @@ public class CamMoveTester : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0,5,0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y > moveScript.InitialPos)
+        if (transform.position.y < moveScript.FinalPos)
         {
-            moveScript.moveCamDown();
+            moveScript.moveCamUp();
         }
     }
 }
