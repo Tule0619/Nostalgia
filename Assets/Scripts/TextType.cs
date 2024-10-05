@@ -25,6 +25,8 @@ public class TextType : MonoBehaviour
 	
 	private float _promptChance;
 
+	private int choicesMade;
+
 	// String to contain the lorem language
     private string lorem;
 
@@ -78,7 +80,12 @@ public class TextType : MonoBehaviour
 		{
 			cam.moveCamDown();
 		}
-	}
+        if (choicesMade == 6)
+        {
+            _textMeshPro.text = "";
+            choicesMade = 0;
+        }
+    }
 
     /// <summary>
     /// Return a random lorem word
@@ -137,12 +144,14 @@ public class TextType : MonoBehaviour
 	{
 		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[0].Title} </font>";
 		cam.moveCamDown();
+		choicesMade++;
 		_inPrompt = false;
 	}
     public void AddChoiceTwo()
     {
 		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[1].Title} </font>";
         cam.moveCamDown();
+		choicesMade++;
 		_inPrompt = false;
     }
 }

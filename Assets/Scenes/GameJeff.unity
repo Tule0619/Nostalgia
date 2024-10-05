@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 2104583250}
-  _promptChance: 0
+  _promptChance: 10
   cam: {fileID: 1190492029}
   optionOne: {fileID: 981301375}
   optionTwo: {fileID: 721409383}
