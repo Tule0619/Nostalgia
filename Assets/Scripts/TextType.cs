@@ -41,13 +41,16 @@ public class TextType : MonoBehaviour
 	/// </summary>
 	private bool _inPrompt;
 
-	[SerializeField]
 	private TextMeshProUGUI optionOne;
-	[SerializeField]
+
 	private TextMeshProUGUI optionTwo;
 
 	private Choice[] choices;
 
+	[SerializeField]
+	private GameObject canvas;
+
+	private GameObject currentCanvas;
 
     void Awake()
     {
@@ -83,7 +86,7 @@ public class TextType : MonoBehaviour
         if (choicesMade == 6)
         {
             _textMeshPro.text = "";
-            choicesMade = 0;
+				
         }
     }
 
@@ -115,9 +118,6 @@ public class TextType : MonoBehaviour
 			// Prompt user for choice
 			if (Random.Range(0, 101) < _promptChance)
 			{
-                choices = Storage.GetOptions((Options)Random.Range(0, 6));
-                optionOne.text = choices[0].Title;
-                optionTwo.text = choices[1].Title;
                 PromptUserForWord();
 				return;
 			}
@@ -132,7 +132,14 @@ public class TextType : MonoBehaviour
 	private void PromptUserForWord()
 	{
 		_inPrompt = true;
-		print("prompted");
+        currentCanvas = Instantiate(canvas);
+		TextMeshProUGUI[] textMeshes = currentCanvas.GetComponentsInChildren<TextMeshProUGUI>();
+		optionOne = textMeshes[1];
+        optionTwo = textMeshes[2];
+        choices = Storage.GetOptions((Options)Random.Range(0, 6));
+        optionOne.text = choices[0].Title;
+        optionTwo.text = choices[1].Title;
+        print("prompted");
 	}
 
 	private void DeleteWords()
@@ -146,6 +153,7 @@ public class TextType : MonoBehaviour
 		cam.moveCamDown();
 		choicesMade++;
 		_inPrompt = false;
+		Destroy(currentCanvas);
 	}
     public void AddChoiceTwo()
     {
@@ -153,5 +161,6 @@ public class TextType : MonoBehaviour
         cam.moveCamDown();
 		choicesMade++;
 		_inPrompt = false;
+        Destroy(currentCanvas);
     }
 }
