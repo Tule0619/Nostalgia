@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
+    ActivatePause button;
+    
+
+    public void SetButton(ActivatePause button)
+    {
+        this.button = button;
+    }
 
     void Start()
     {
@@ -15,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
      
         Time.timeScale = 1.0f;
+        button.ClosePauseMenu();
         Destroy(gameObject);
     }
 }
