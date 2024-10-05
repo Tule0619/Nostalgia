@@ -40,9 +40,11 @@ public class TextType : MonoBehaviour
 	private bool _inPrompt;
 
 	[SerializeField]
-	private Button optionOne;
+	private TextMeshProUGUI optionOne;
 	[SerializeField]
-	private Button optionTwo;
+	private TextMeshProUGUI optionTwo;
+
+	private Choice[] choices;
 
 
     void Awake()
@@ -106,7 +108,10 @@ public class TextType : MonoBehaviour
 			// Prompt user for choice
 			if (Random.Range(0, 101) < _promptChance)
 			{
-				PromptUserForWord();
+                choices = Storage.GetOptions((Options)Random.Range(0, 6));
+                optionOne.text = choices[0].Title;
+                optionTwo.text = choices[1].Title;
+                PromptUserForWord();
 				return;
 			}
 
@@ -130,13 +135,13 @@ public class TextType : MonoBehaviour
 
 	public void AddChoiceOne()
 	{
-		
+		_textMeshPro.text += " " + choices[0].Title;
 		cam.moveCamDown();
 		_inPrompt = false;
 	}
     public void AddChoiceTwo()
     {
-		
+        _textMeshPro.text += " " + choices[1].Title;
         cam.moveCamDown();
 		_inPrompt = false;
     }
