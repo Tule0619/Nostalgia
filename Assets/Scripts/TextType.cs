@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class TextType : MonoBehaviour
 {
@@ -30,10 +31,19 @@ public class TextType : MonoBehaviour
     // Array to store lorem words
     private string[] words;
 
+	[SerializeField]
+	private CameraMove cam;
+
 	/// <summary>
 	/// Is the user currently being prompted for a word?
 	/// </summary>
 	private bool _inPrompt;
+
+	[SerializeField]
+	private Button optionOne;
+	[SerializeField]
+	private Button optionTwo;
+
 
     void Awake()
     {
@@ -57,6 +67,14 @@ public class TextType : MonoBehaviour
 		if(_textMeshPro.preferredHeight > GetComponent<RectTransform>().rect.height)
 		{
 			DeleteWords();
+		}
+		if (_inPrompt)
+		{
+			cam.moveCamUp();
+		}
+		else
+		{
+			cam.moveCamDown();
 		}
 	}
 
@@ -110,8 +128,16 @@ public class TextType : MonoBehaviour
 		_textMeshPro.text = _textMeshPro.text.Substring(15);
 	}
 
-	public void AddChoice(string text)
+	public void AddChoiceOne()
 	{
-		_textMeshPro.text += " " + text;
+		
+		cam.moveCamDown();
+		_inPrompt = false;
 	}
+    public void AddChoiceTwo()
+    {
+		
+        cam.moveCamDown();
+		_inPrompt = false;
+    }
 }
