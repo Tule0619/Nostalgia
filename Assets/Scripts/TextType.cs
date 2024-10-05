@@ -76,6 +76,16 @@ public class TextType : MonoBehaviour
 		{
 			DeleteWords();
 		}
+
+		if (_inPrompt)
+		{
+			cam.moveCamUp();
+		} 
+		else
+		{
+			cam.moveCamDown();
+		}
+
 		if (choicesMade == 6)
         {
             _textMeshPro.text = "";
@@ -139,14 +149,12 @@ public class TextType : MonoBehaviour
 	public void AddChoiceOne()
 	{
 		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[0].Title} </font>";
-		cam.moveCamDown();
 		choicesMade++;
 		_inPrompt = false;
 	}
     public void AddChoiceTwo()
     {
 		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[1].Title} </font>";
-        cam.moveCamDown();
 		choicesMade++;
 		_inPrompt = false;
     }
