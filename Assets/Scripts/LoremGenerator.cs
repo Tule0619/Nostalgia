@@ -27,7 +27,7 @@ public class LoremGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetAWord());
+        //Debug.Log(GetAWord());
     }
 
     /// <summary>
@@ -36,6 +36,6 @@ public class LoremGenerator : MonoBehaviour
     /// <returns></returns>
     public string GetAWord()
     {
-        return words[(int)Random.Range(0, words.Length)];
+		return words[(int)Random.Range(0, words.Length)];
     }
 }
