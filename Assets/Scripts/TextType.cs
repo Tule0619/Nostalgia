@@ -37,23 +37,26 @@ public class TextType : MonoBehaviour
     // Array to store lorem words
     private string[] words;
 
-	[SerializeField]
-	private CameraMove cam;
+	[SerializeField] private CameraMove cam;
 
 	/// <summary>
 	/// Is the user currently being prompted for a word?
 	/// </summary>
 	private bool _inPrompt;
 
-	[SerializeField]
-	private TextMeshProUGUI optionOne;
-	[SerializeField]
-	private TextMeshProUGUI optionTwo;
+	[SerializeField] private Button ButtonOne;
+
+	[SerializeField] private Button ButtonTwo;
+
+	[SerializeField] private TextMeshProUGUI optionOne;
+
+	[SerializeField] private TextMeshProUGUI optionTwo;
 
 	private Choice[] choices;
 
+	[SerializeField] private GameObject _canvas;
 
-    void Awake()
+	void Awake()
     {
         // Set up lorem and split
         lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et error, ullam illo expedita sapiente totam repellat, temporibus corrupti ipsa dolorem esse, nostrum dolorum quisquam iure? Iusto maxime, " +
@@ -85,11 +88,12 @@ public class TextType : MonoBehaviour
 		{
 			cam.moveCamDown();
 		}
+	
 
-		if (choicesMade == 6)
+		//new page of scripts
+        if (choicesMade == 6)
         {
             _textMeshPro.text = "";
-            choicesMade = 0;
         }
     }
 
@@ -108,26 +112,24 @@ public class TextType : MonoBehaviour
 	/// <param name="context">Input action context.</param>
 	public void OnType(InputAction.CallbackContext context)
 	{
-		print("before " + _textMeshPro.text);
 		if (!context.performed || _inPrompt) return;
 
 		// Create end of a lorem ipsum word, change to next lorem ipsum word
 		if (_currentChar == _currentWord.ToString().Length)
 		{
-			_textMeshPro.text += ' ';
-			_currentWord = GetAWord();
-			_currentChar = 0;
-
 			// Prompt user for choice
 			if (Random.Range(0, 101) < _promptChance)
 			{
-                choices = Storage.GetOptions((Options)Random.Range(0, 6));
-                optionOne.text = choices[0].Title;
-                optionTwo.text = choices[1].Title;
                 PromptUserForWord();
-				return;
+			}
+			//Otherwise just go to next word.
+			else
+			{
+				_textMeshPro.text += ' ';
 			}
 
+			_currentWord = GetAWord();
+			_currentChar = 0;
 			return;
 		}
 
@@ -138,26 +140,45 @@ public class TextType : MonoBehaviour
 	private void PromptUserForWord()
 	{
 		_inPrompt = true;
-		print("prompted");
+
+		_canvas.SetActive(true);
+        choices = Storage.GetOptions((Options)Random.Range(0, 6));
+        optionOne.text = choices[0].Title;
+        optionTwo.text = choices[1].Title;
+		SetButtons(true);
+
+		cam.moveCamUp();
+        print("prompted");
 	}
 
 	private void DeleteWords()
 	{
 		_textMeshPro.text = _textMeshPro.text.Substring(15);
 	}
-
 	public void AddChoiceOne()
 	{
-		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[0].Title} </font>";
-		choicesMade++;
-		_inPrompt = false;
+		_textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[0].Title} </font>";
+		ChoiceMade();
 	}
     public void AddChoiceTwo()
     {
-		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[1].Title} </font>";
+		_textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
+		ChoiceMade();
+    }
+
+	private void ChoiceMade()
+	{
+		cam.moveCamDown();
 		choicesMade++;
 		_inPrompt = false;
-    }
+		SetButtons(false);
+	}
+
+	private void SetButtons(bool onOrOff)
+	{
+		ButtonOne.interactable = onOrOff;
+		ButtonTwo.interactable = onOrOff;
+	}
 
 	public void NameMoviePrompt()
 	{
