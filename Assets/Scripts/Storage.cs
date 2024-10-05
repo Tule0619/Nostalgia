@@ -64,9 +64,7 @@ public class Storage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Choice[] test = GetOptions(Options.Genre);
-        Debug.Log(test[0].Title + ", " + test[1].Title);
-        genres[0].Picked();
+        
     }
 
     public Choice[] GetOptions(Options option)
