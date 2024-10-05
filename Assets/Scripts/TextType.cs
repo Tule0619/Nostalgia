@@ -72,6 +72,7 @@ public class TextType : MonoBehaviour
 	/// <param name="context">Input action context.</param>
 	public void OnType(InputAction.CallbackContext context)
 	{
+		print('h');
 		if (!context.performed || _inPrompt) return;
 
 		// Create end of a lorem ipsum word, change to next lorem ipsum word
