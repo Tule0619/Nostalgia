@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
+    [Tooltip("FInal position, used for moveCamUp()")]
     [SerializeField] float finalPos;
+    [Tooltip("Initial Position, should be set to where the camera starts. Used in moveCamDown()")]
     [SerializeField] float initialPos;
+    [Tooltip("Modifies the speed the camera moves, minimum of 0 to work correctly")]
     [SerializeField] public float speed;
 
+    /// <summary>
+    /// Get method, returns Speed
+    /// </summary>
     public float Speed
     {
         get
@@ -16,6 +22,9 @@ public class CameraMove : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get Method, returns the final position
+    /// </summary>
     public float FinalPos
     {
         get
@@ -24,6 +33,9 @@ public class CameraMove : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get method, returns initial position
+    /// </summary>
     public float InitialPos
     {
         get
@@ -32,14 +44,13 @@ public class CameraMove : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        initialPos = transform.position.y;
-    }
+  
 
     
-
+    /// <summary>
+    /// Moves camera up until it hits finalPos. If overshoots, corrects to finalPos.
+    /// </summary>
+    /// <returns>y position</returns>
     public float moveCamUp()
     {
         transform.position += new Vector3(0, (finalPos * Time.deltaTime) * speed, 0);
@@ -50,6 +61,10 @@ public class CameraMove : MonoBehaviour
         return transform.position.y;
     }
 
+    /// <summary>
+    /// Moves camera down until it hits initialPos. If overshoots, corrects to initialPos.
+    /// </summary>
+    /// <returns>y position</returns>
     public float moveCamDown()
     {
         transform.position += new Vector3(0, (finalPos * Time.deltaTime) * -speed, 0);
