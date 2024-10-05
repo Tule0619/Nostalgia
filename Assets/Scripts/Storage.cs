@@ -43,12 +43,13 @@ public static class Storage
         new Choice("Lora Craft"),
         new Choice("A Bowling Ball"),
         new Choice("Horace the Hippo"),
-        new Choice("Beefilton"),
+        new Choice("Lebanon Jakes"),
+        new Choice("Beefilton")
     };
 
     static Choice[] villains =
     {
-        new Choice("The Laugher"),
+        new Choice("The Giggler"),
         new Choice("Dork Wader"),
         new Choice("The Evil Lizard Wizard of the South"),
         new Choice("Captain Moby"),
@@ -57,7 +58,9 @@ public static class Storage
         new Choice("Mousewoman"),
         new Choice("The Hanging Tree"),
         new Choice("Doug"),
-        new Choice("Monster of the Week"),
+        new Choice("George Orwell"),
+        new Choice("Copywright Infringement Cory"),
+        new Choice("Monster of the Week")
     };
 
     static Choice[] sidekicks =
@@ -70,36 +73,42 @@ public static class Storage
         new Choice("George Washington"),
         new Choice("Imeno"),
         new Choice("Sans Cooperative"),
+        new Choice("Helvetica"),
         new Choice("Joe Purpleman"),
         new Choice("Fred Cashvalue"),
+        new Choice("Fitzgerald")
     };
 
     static Choice[] settings =
     {
         new Choice("The City"),
         new Choice("The Jungle"),
+        new Choice("The Underworld"),
+        new Choice("The 96.48 Acre Woods"),
         new Choice("In Space!"),
         new Choice("In Another Universe..."),
         new Choice("Underground"),
-        new Choice("In an Office Building"),
+        new Choice("Office Building"),
         new Choice("On the Sea"),
         new Choice("In Limbo"),
-        new Choice("A Cozy Neighborhood"),
-        new Choice("In an Abandoned Movie Theater"),
+        new Choice("Cozy Neighborhood"),
+        new Choice("Salem Witch Trials"),
+        new Choice("Abandoned Movie Theater")
     };
 
     static Choice[] plots =
     {
         new Choice("High Speed Chase"),
-        new Choice("A Macguffin"),
+        new Choice("A MacGuffin"),
         new Choice("Romantic Affair"),
         new Choice("A Series of Miscommunications"),
+        new Choice("Discovering a Long-Lost Twin"),
         new Choice("Deadly Traps & Daring Escapades"),
         new Choice("One Last Chance at Love"),
         new Choice("A Town Too Small for the Two of Them"),
-        new Choice("What happened Last Summer?"),
+        new Choice("What Happened Last Summer?"),
         new Choice("A Holdup"),
-        new Choice("An Expedition to somewhere new..."),
+        new Choice("An Expedition to Somewhere New...")
     };
 
     public static Choice[] GetOptions(Options option)
