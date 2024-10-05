@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TextType : MonoBehaviour
 {
-	[SerializeField] [Tooltip("TextMeshPro Object")] private TextMeshPro _textMeshPro;
+	[SerializeField] [Tooltip("TextMeshPro Object")] 
+	private TextMeshPro _textMeshPro;
+	[SerializeField] [Tooltip("Rect Transform Component")] 
+	private RectTransform _rectTransform;
 
 	/// <summary>
 	/// Current Wingding word
@@ -68,19 +72,11 @@ public class TextType : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(_textMeshPro.preferredHeight > GetComponent<RectTransform>().rect.height)
+		if(_textMeshPro.preferredHeight > _rectTransform.rect.height)
 		{
 			DeleteWords();
 		}
-		if (_inPrompt)
-		{
-			cam.moveCamUp();
-		}
-		else
-		{
-			cam.moveCamDown();
-		}
-        if (choicesMade == 6)
+		if (choicesMade == 6)
         {
             _textMeshPro.text = "";
             choicesMade = 0;
@@ -154,4 +150,14 @@ public class TextType : MonoBehaviour
 		choicesMade++;
 		_inPrompt = false;
     }
+
+	public void NameMoviePrompt()
+	{
+		//Spawn Text input
+	}
+
+	public void StartNewScript()
+	{
+		//Destroy Text input
+	}
 }
