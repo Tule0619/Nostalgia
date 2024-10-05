@@ -52,11 +52,14 @@ public class TextType : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()//
-	{            //
-		            //
-	}            //
-              //
+	void Update()
+	{
+		if(_textMeshPro.preferredHeight > GetComponent<RectTransform>().rect.height)
+		{
+			DeleteWords();
+		}
+	}
+
     /// <summary>
     /// Return a random lorem word
     /// </summary>
@@ -100,5 +103,10 @@ public class TextType : MonoBehaviour
 	{
 		_inPrompt = true;
 		print("prompted");
+	}
+
+	private void DeleteWords()
+	{
+		_textMeshPro.text = _textMeshPro.text.Substring(10);
 	}
 }
