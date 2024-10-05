@@ -14,7 +14,7 @@ public class NostalgiaBar : MonoBehaviour
         sliderNav.value = nostalgia;
     }
 
-    public void SetNostalgia(float nostalgia)
+    public void ChangeNostalgia(float nostalgia)
     {
         if ((sliderNav.value + nostalgia) >= 0)
         {
