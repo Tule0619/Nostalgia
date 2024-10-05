@@ -12,9 +12,11 @@ public enum Options
     Plot
 }
 
-public class Storage : MonoBehaviour
+public static class Storage
 {
-    Choice[] genres =
+    public const float MAX_NOSTALGIA = 5f;
+    
+    static Choice[] genres =
     {
         new Choice("Action"),
         new Choice("Thriller"),
@@ -30,7 +32,7 @@ public class Storage : MonoBehaviour
         new Choice("Musical")
     };
 
-    Choice[] heroes =
+    static Choice[] heroes =
     {
         new Choice("Sir Gonealot"),
         new Choice("Ohio John"),
@@ -44,7 +46,7 @@ public class Storage : MonoBehaviour
         new Choice("Beefilton"),
     };
 
-    Choice[] villains =
+    static Choice[] villains =
     {
         new Choice("The Laugher"),
         new Choice("Dork Wader"),
@@ -58,7 +60,7 @@ public class Storage : MonoBehaviour
         new Choice("Monster of the Week"),
     };
 
-    Choice[] sidekicks =
+    static Choice[] sidekicks =
     {
         new Choice("Sir Squire, Esquire"),
         new Choice("Timmy"),
@@ -72,7 +74,7 @@ public class Storage : MonoBehaviour
         new Choice("Fred Cashvalue"),
     };
 
-    Choice[] settings =
+    static Choice[] settings =
     {
         new Choice("The City"),
         new Choice("The Jungle"),
@@ -86,7 +88,7 @@ public class Storage : MonoBehaviour
         new Choice("In an Abandoned Movie Theater"),
     };
 
-    Choice[] plots =
+    static Choice[] plots =
     {
         new Choice("High Speed Chase"),
         new Choice("A Macguffin"),
@@ -100,19 +102,7 @@ public class Storage : MonoBehaviour
         new Choice("An Expedition to somewhere new..."),
     };
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public Choice[] GetOptions(Options option)
+    public static Choice[] GetOptions(Options option)
     {
         switch (option) {
             case Options.Genre: return GetOptions(genres);
@@ -125,7 +115,7 @@ public class Storage : MonoBehaviour
         }
     }
 
-    Choice[] GetOptions(Choice[] options)
+    static Choice[] GetOptions(Choice[] options)
     {
         string[] selected = new string[2];
         int firstRand = WeightedRandom(options);
@@ -143,7 +133,7 @@ public class Storage : MonoBehaviour
     /// </summary>
     /// <param name="options">Array of choices</param>
     /// <returns>The index of the item it chose</returns>
-    int WeightedRandom(Choice[] options)
+    static int WeightedRandom(Choice[] options)
     {
         int total = 0;
         foreach (Choice c in options) {
@@ -160,6 +150,16 @@ public class Storage : MonoBehaviour
         }
 
         return options.Length - 1;
+    }
+
+    public static int GetApproval(Choice[] options)
+    {
+        float max = MAX_NOSTALGIA * options.Length;
+        float total = 0;
+        foreach (Choice c in options) {
+            total += c.Nostalgia;
+        }
+        return (int)(total / max);
     }
 }
 
@@ -185,13 +185,14 @@ public class Choice
         if (count > 1)
             nostalgia -= Random.Range(0.25f, 0.5f);
         else
-            nostalgia = 5f;
+            nostalgia = Storage.MAX_NOSTALGIA;
         
         count++;
 
     }
     public void NotPicked()
     {
-        nostalgia += Random.Range(0f, 0.25f);
+        if (count > 1)
+            nostalgia += Random.Range(0f, 0.25f);
     }
 }
