@@ -99,6 +99,7 @@ public class TextType : MonoBehaviour
 			{
 				total += c.Nostalgia;
 			}
+			Debug.Log(total);
 			bar.ChangeNostalgia(total);
             _textMeshPro.text = "";
 			for(int i = 0; i < picked.Length; i++)
