@@ -410,6 +410,17 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &721409383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+  m_PrefabInstance: {fileID: 6006555989050360233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &732875028
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +506,17 @@ Transform:
   - {fileID: 2104583248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981301375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+  m_PrefabInstance: {fileID: 6006555989050360233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1190492025
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,9 +639,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104583248}
+  - component: {fileID: 2104583252}
   - component: {fileID: 2104583251}
   - component: {fileID: 2104583250}
-  - component: {fileID: 2104583252}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -793,10 +815,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 2104583250}
-  _promptChance: 100
+  _promptChance: 0
   cam: {fileID: 1190492029}
-  optionOne: {fileID: 0}
-  optionTwo: {fileID: 0}
+  optionOne: {fileID: 981301375}
+  optionTwo: {fileID: 721409383}
 --- !u!1001 &6006555989050360233
 PrefabInstance:
   m_ObjectHideFlags: 0
