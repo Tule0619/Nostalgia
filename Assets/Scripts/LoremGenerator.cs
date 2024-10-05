@@ -14,7 +14,7 @@ public class LoremGenerator : MonoBehaviour
     private string[] words;
     // Start is called before the first frame update
 
-    void Start()
+    void Awake()
     {
         // Set up lorem and split
         lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et error, ullam illo expedita sapiente totam repellat, temporibus corrupti ipsa dolorem esse, nostrum dolorum quisquam iure? Iusto maxime, " +
@@ -36,6 +36,6 @@ public class LoremGenerator : MonoBehaviour
     /// <returns></returns>
     public string GetAWord()
     {
-		return words[(int)Random.Range(0, words.Length)];
+		return words[Random.Range(0, words.Length)];
     }
 }

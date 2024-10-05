@@ -10,10 +10,12 @@ public class TextType : MonoBehaviour
 	[SerializeField] private LoremGenerator _loremGenerator;
 	private string _currentWord = string.Empty;
 	private int _currentChar = 0;
+
 	// Need to read in lorem ipsum and make player type it out when they mash the keyboard.
 	public void OnType(InputAction.CallbackContext context)
 	{
 		if (!context.performed) return;
+		print("typing");
 		if (_currentChar == _currentWord.ToString().Length)
 		{
 			_textMeshPro.text += ' ';

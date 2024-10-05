@@ -523,7 +523,7 @@
             "actions": [
                 {
                     "name": "Type",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "395a8735-8b74-4f13-b44a-6689da35e083",
                     "expectedControlType": "Button",
                     "processors": "",
