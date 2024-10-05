@@ -396,6 +396,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &764736282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7981695628081968064, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
+  m_PrefabInstance: {fileID: 1743475509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &851822976
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,8 +435,10 @@ MonoBehaviour:
   _textMeshPro: {fileID: 851822978}
   _promptChance: 10
   cam: {fileID: 1190492029}
+  bar: {fileID: 560114496}
   optionOne: {fileID: 2050850579}
   optionTwo: {fileID: 8643312}
+  _canvas: {fileID: 764736282}
 --- !u!114 &851822978
 MonoBehaviour:
   m_ObjectHideFlags: 0

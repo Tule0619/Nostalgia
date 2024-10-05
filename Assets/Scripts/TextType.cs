@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ public class TextType : MonoBehaviour
 
 	private int choicesMade;
 
+	private Choice[] picked = new Choice[6];
+
 	// String to contain the lorem language
     private string lorem;
 
@@ -34,6 +37,9 @@ public class TextType : MonoBehaviour
     private string[] words;
 
 	[SerializeField] private CameraMove cam;
+
+	[SerializeField]
+	NostalgiaBar bar;
 
 	/// <summary>
 	/// Is the user currently being prompted for a word?
@@ -47,6 +53,8 @@ public class TextType : MonoBehaviour
 	private Choice[] choices;
 
 	[SerializeField] private GameObject _canvas;
+
+	private float gameScore;
 
 	void Awake()
     {
@@ -86,7 +94,18 @@ public class TextType : MonoBehaviour
 		//new page of scripts
         if (choicesMade == 6)
         {
+			float total = 0;
+			foreach(Choice c in picked)
+			{
+				total += c.Nostalgia;
+			}
+			bar.ChangeNostalgia(total);
             _textMeshPro.text = "";
+			for(int i = 0; i < picked.Length; i++)
+			{
+				picked[i] = null;
+			}
+			choicesMade = 0;
         }
     }
 
@@ -149,12 +168,18 @@ public class TextType : MonoBehaviour
 	}
 	public void AddChoiceOne()
 	{
+		picked[choicesMade] = choices[0];
+		choices[0].Picked();
+		choices[1].NotPicked();
 		_textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[0].Title} </font>";
 		ChoiceMade();
 	}
     public void AddChoiceTwo()
     {
-		_textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
+        picked[choicesMade] = choices[1];
+        choices[1].Picked();
+        choices[0].NotPicked();
+        _textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
 		ChoiceMade();
     }
 
