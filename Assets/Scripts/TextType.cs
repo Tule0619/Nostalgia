@@ -52,14 +52,11 @@ public class TextType : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
-	{
-		if(_textMeshPro.preferredHeight > 25)
-		{
-			DeleteWords();
-		}
-	}
-
+	void Update()//
+	{            //
+		            //
+	}            //
+              //
     /// <summary>
     /// Return a random lorem word
     /// </summary>
@@ -103,10 +100,5 @@ public class TextType : MonoBehaviour
 	{
 		_inPrompt = true;
 		print("prompted");
-	}
-
-	private void DeleteWords()
-	{
-		_textMeshPro.text = _textMeshPro.text.Substring(10);
 	}
 }
