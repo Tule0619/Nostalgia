@@ -107,6 +107,11 @@ public class TextType : MonoBehaviour
 
 	private void DeleteWords()
 	{
-		_textMeshPro.text = _textMeshPro.text.Substring(10);
+		_textMeshPro.text = _textMeshPro.text.Substring(15);
+	}
+
+	public void AddChoice(string text)
+	{
+		_textMeshPro.text += " " + text;
 	}
 }
