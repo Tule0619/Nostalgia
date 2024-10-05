@@ -608,28 +608,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4303502115789932616, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
   m_PrefabInstance: {fileID: 6006555989050360233}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1936892098 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8027594284593143985, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
-  m_PrefabInstance: {fileID: 6006555989050360233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2094646424 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6040365710383124792, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
-  m_PrefabInstance: {fileID: 6006555989050360233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2104583247
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,10 +793,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 2104583250}
-  _promptChance: 5
+  _promptChance: 100
   cam: {fileID: 1190492029}
-  optionOne: {fileID: 2094646424}
-  optionTwo: {fileID: 1936892098}
+  optionOne: {fileID: 0}
+  optionTwo: {fileID: 0}
 --- !u!1001 &6006555989050360233
 PrefabInstance:
   m_ObjectHideFlags: 0

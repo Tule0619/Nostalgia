@@ -523,12 +523,12 @@
             "actions": [
                 {
                     "name": "Type",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "395a8735-8b74-4f13-b44a-6689da35e083",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

@@ -95,7 +95,7 @@ public class TextType : MonoBehaviour
 	/// <param name="context">Input action context.</param>
 	public void OnType(InputAction.CallbackContext context)
 	{
-		print('h');
+		print("before " + _textMeshPro.text);
 		if (!context.performed || _inPrompt) return;
 
 		// Create end of a lorem ipsum word, change to next lorem ipsum word
@@ -135,13 +135,13 @@ public class TextType : MonoBehaviour
 
 	public void AddChoiceOne()
 	{
-		_textMeshPro.text += " " + choices[0].Title;
+		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[0].Title} </font>";
 		cam.moveCamDown();
 		_inPrompt = false;
 	}
     public void AddChoiceTwo()
     {
-        _textMeshPro.text += " " + choices[1].Title;
+		_textMeshPro.text += $"<font=\"Roboto-Regular SDF>{choices[1].Title} </font>";
         cam.moveCamDown();
 		_inPrompt = false;
     }
