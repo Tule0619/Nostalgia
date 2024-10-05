@@ -32,27 +32,72 @@ public class Storage : MonoBehaviour
 
     Choice[] heroes =
     {
-        
+        new Choice("Sir Gonealot"),
+        new Choice("Ohio John"),
+        new Choice("The Rectangle"),
+        new Choice("Rochester Reggie"),
+        new Choice("Clyde"),
+        new Choice("The Player"),
+        new Choice("Lora Craft"),
+        new Choice("A Bowling Ball"),
+        new Choice("Horace the Hippo"),
+        new Choice("Beefilton"),
     };
 
     Choice[] villains =
     {
-        
+        new Choice("The Laugher"),
+        new Choice("Dork Wader"),
+        new Choice("The Evil Lizard Wizard of the South"),
+        new Choice("Captain Moby"),
+        new Choice("Pineconehead"),
+        new Choice("Sansa"),
+        new Choice("Mousewoman"),
+        new Choice("The Hanging Tree"),
+        new Choice("Doug"),
+        new Choice("Monster of the Week"),
     };
 
     Choice[] sidekicks =
     {
-        
+        new Choice("Sir Squire, Esquire"),
+        new Choice("Timmy"),
+        new Choice("Gloves the Giraffe"),
+        new Choice("Giant the Giant Dragon"),
+        new Choice("A Djinni"),
+        new Choice("George Washington"),
+        new Choice("Imeno"),
+        new Choice("Sans Cooperative"),
+        new Choice("Joe Purpleman"),
+        new Choice("Fred Cashvalue"),
     };
 
     Choice[] settings =
     {
-        
+        new Choice("The City"),
+        new Choice("The Jungle"),
+        new Choice("In Space!"),
+        new Choice("In Another Universe..."),
+        new Choice("Underground"),
+        new Choice("In an Office Building"),
+        new Choice("On the Sea"),
+        new Choice("In Limbo"),
+        new Choice("A Cozy Neighborhood"),
+        new Choice("In an Abandoned Movie Theater"),
     };
 
     Choice[] plots =
     {
-        
+        new Choice("High Speed Chase"),
+        new Choice("A Macguffin"),
+        new Choice("Romantic Affair"),
+        new Choice("A Series of Miscommunications"),
+        new Choice("Deadly Traps & Daring Escapades"),
+        new Choice("One Last Chance at Love"),
+        new Choice("A Town Too Small for the Two of Them"),
+        new Choice("What happened Last Summer?"),
+        new Choice("A Holdup"),
+        new Choice("An Expedition to somewhere new..."),
     };
 
     // Start is called before the first frame update
