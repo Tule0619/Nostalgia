@@ -69,8 +69,7 @@ public class Storage : MonoBehaviour
 
     public Choice[] GetOptions(Options option)
     {
-        switch (option)
-        {
+        switch (option) {
             case Options.Genre: return GetOptions(genres);
             case Options.Hero: return GetOptions(heroes);
             case Options.Villain: return GetOptions(villains);
@@ -123,18 +122,31 @@ public class Choice
 {
     string title;
     int count;
+    float nostalgia;
 
     public string Title { get { return title; } }
     public int Count { get { return count; } }
+    public float Nostalgia { get { return nostalgia; } }
 
     public Choice(string title)
     {
         this.title = title;
         count = 1;
+        nostalgia = 0.25f;
     }
 
     public void Picked()
     {
+        if (count > 1)
+            nostalgia -= Random.Range(0.25f, 0.5f);
+        else
+            nostalgia = 5f;
+        
         count++;
+
+    }
+    public void NotPicked()
+    {
+        nostalgia += Random.Range(0f, 0.25f);
     }
 }
