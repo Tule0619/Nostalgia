@@ -30,4 +30,12 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    /// <summary>
+    /// Quits the game.
+    /// </summary>
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
