@@ -30,7 +30,7 @@ public class NostalgiaBarTesting : MonoBehaviour
         // and reset the timer.
         if (timer > timeUntilDecrease)
         {
-            nostalgia.SetNostalgia(-nostalgiaSpeed);
+            nostalgia.ChangeNostalgia(-nostalgiaSpeed);
             timer = 0;
         }
     }
