@@ -82,11 +82,11 @@ public class TextType : MonoBehaviour
 			_currentChar = 0;
 
 			// Prompt user for choice
-			//if (Random.Range(0, 101) < _promptChance)
-			//{
-			//	PromptUserForWord();
-			//	return;
-			//}
+			if (Random.Range(0, 101) < _promptChance)
+			{
+				PromptUserForWord();
+				return;
+			}
 
 			return;
 		}
