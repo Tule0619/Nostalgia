@@ -24,16 +24,9 @@ public class NostalgiaBarTesting : MonoBehaviour
     void Update()
     {
         if (!Meter.start) return;
-        
-        // Update the time
-        timer += Time.deltaTime;
 
-        // If enough time has passed, decrease nostalgia
-        // and reset the timer.
-        if (timer > timeUntilDecrease)
-        {
-            nostalgia.ChangeNostalgia(-nostalgiaSpeed);
-            timer = 0;
-        }
+        // Update the time
+        nostalgia.ChangeNostalgia(-nostalgiaSpeed * Time.deltaTime);
+        Debug.Log(Time.deltaTime);
     }
 }
