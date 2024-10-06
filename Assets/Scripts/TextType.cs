@@ -62,6 +62,8 @@ public class TextType : MonoBehaviour
 
 	[SerializeField] private GameObject _namePrompt;
 
+	[SerializeField] private TextMeshProUGUI _namePromptInputField;
+
 	private bool justStartedNewScript = false;
 	#endregion
 
@@ -143,7 +145,6 @@ public class TextType : MonoBehaviour
 			return;
 		}
 
-		print("typing");
 		_script.text += _currentWord[_currentChar];
 		_currentChar++;
 	}
@@ -201,8 +202,18 @@ public class TextType : MonoBehaviour
 		_namePrompt.SetActive(true);
 	}
 
+	public void SubmitTitle(InputAction.CallbackContext context)
+	{
+		if (!context.performed || _namePromptInputField.text.Length < 1)
+		{
+			return;
+		}
+		BackToGameplay(_namePromptInputField.text);
+	}
+
 	public void BackToGameplay(string name)
 	{
+		print(name);
 		_script.text = string.Empty;
 		_namePrompt.SetActive(false);
 		_playerInput.SwitchCurrentActionMap("Gameplay");

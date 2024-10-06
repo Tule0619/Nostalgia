@@ -4,8 +4,30 @@
         {
             "name": "UI",
             "id": "e3cd0a2d-06cd-4ae0-bfbe-a0d56479616a",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "75d252a8-b165-4350-908d-640f3a1ac163",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9b26a9a2-2bd0-4e63-ba31-dfa78e3f2424",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         },
         {
             "name": "Gameplay",
