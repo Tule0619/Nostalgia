@@ -2476,11 +2476,11 @@ MonoBehaviour:
   _rectTransform: {fileID: 2104583248}
   _playerInput: {fileID: 591344958}
   audioClips:
-  - {fileID: 8300000, guid: ebf2836b316034242aa10c122664e5f3, type: 3}
-  - {fileID: 8300000, guid: 6735ed2ab2802814c8b2edc109866519, type: 3}
-  - {fileID: 8300000, guid: 0a423e57dc883ac47b978a9637ba6337, type: 3}
-  - {fileID: 8300000, guid: 0ff8ada78f290a248bc65ee304fb10cf, type: 3}
-  - {fileID: 8300000, guid: 05a68a4d205c51c47bfcc82047517af5, type: 3}
+  - {fileID: 8300000, guid: 1d3cf0d5bb34d9749aae0d3b290d8695, type: 3}
+  - {fileID: 8300000, guid: 2f5c0a421995c71468b3a094c619c04a, type: 3}
+  - {fileID: 8300000, guid: aee149359388b50499bcb165d0453f08, type: 3}
+  - {fileID: 8300000, guid: 4dd07e6681bfc4e4b986792ed3803f49, type: 3}
+  - {fileID: 8300000, guid: 1cf58dae1f6eb9041a0c7f79f418bcc4, type: 3}
   player: {fileID: 2104583253}
   cam: {fileID: 1190492029}
   posterchange: {fileID: 937996716}
