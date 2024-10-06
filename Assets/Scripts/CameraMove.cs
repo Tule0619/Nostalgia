@@ -11,6 +11,7 @@ public class CameraMove : MonoBehaviour
     [Tooltip("Modifies the speed the camera moves, minimum of 0 to work correctly")]
     [SerializeField] public float speed;
 
+
     /// <summary>
     /// Get method, returns Speed
     /// </summary>
@@ -44,6 +45,10 @@ public class CameraMove : MonoBehaviour
         }
     }
 
+    public Vector3 Scale
+    {
+        get { return transform.localScale; }
+    }
   
 
     
@@ -57,6 +62,7 @@ public class CameraMove : MonoBehaviour
         if (transform.position.y > finalPos)
         {
             transform.position = new Vector3(0, finalPos, 0);
+
         }
         return transform.position.y;
     }
