@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -29,6 +29,8 @@ public class TextType : MonoBehaviour
 
 	private int choicesMade;
 
+	private Choice[] picked = new Choice[6];
+
 	// String to contain the lorem language
     private string lorem;
 
@@ -47,6 +49,13 @@ public class TextType : MonoBehaviour
     /// Is the user currently being prompted for a word?
     /// </summary>
     private bool _inPrompt;
+	[SerializeField]
+	NostalgiaBar bar;
+
+	/// <summary>
+	/// Is the user currently being prompted for a word?
+	/// </summary>
+	private bool _inPrompt;
 
 	[SerializeField] private Button ButtonOne;
 
@@ -59,6 +68,10 @@ public class TextType : MonoBehaviour
 	private Choice[] choices;
 
 	[SerializeField] private GameObject _canvas;
+
+	private float gameScore;
+
+	private int[] indices = new int[] { -1, -1, -1, -1, -1, -1 };
 
 	[SerializeField] private GameObject _namePrompt;
 
@@ -101,7 +114,24 @@ public class TextType : MonoBehaviour
 		}
 
 		//new page of scripts
-        
+        if (choicesMade == 6)
+        {
+			float total = 0;
+			foreach(Choice c in picked)
+			{
+				total += c.Nostalgia;
+				Debug.Log(c.Title+": "+c.Nostalgia);
+			}
+			Debug.Log(total);
+			bar.ChangeNostalgia(total);
+            _textMeshPro.text = "";
+			for(int i = 0; i < picked.Length; i++)
+			{
+				picked[i] = null;
+				indices[i] = -1;
+			}
+			choicesMade = 0;
+        }
     }
 
     /// <summary>
@@ -155,7 +185,19 @@ public class TextType : MonoBehaviour
 		_inPrompt = true;
 
 		_canvas.SetActive(true);
-        choices = Storage.GetOptions((Options)Random.Range(0, 6));
+		int rand;
+
+		if (choicesMade < 5)
+			while (indices.Contains(rand = Random.Range(0, 6)));
+		else {
+			int sum = 0;
+			for (int i = 0; i < 5; i++)
+				sum += indices[i];
+			rand = 15 - sum;
+		}
+		Debug.Log(rand);
+		indices[choicesMade] = rand;
+        choices = Storage.GetOptions((Options)indices[choicesMade]);
         optionOne.text = choices[0].Title;
         optionTwo.text = choices[1].Title;
 		SetButtons(true);
@@ -169,11 +211,17 @@ public class TextType : MonoBehaviour
 	}
 	public void AddChoiceOne()
 	{
+		picked[choicesMade] = choices[0];
+		choices[0].Picked();
+		choices[1].NotPicked();
 		_script.text += $"<font=\"Roboto-Regular SDF> {choices[0].Title} </font>";
 		ChoiceMade();
 	}
     public void AddChoiceTwo()
     {
+        picked[choicesMade] = choices[1];
+        choices[1].Picked();
+        choices[0].NotPicked();
 		_script.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
 		ChoiceMade();
     }

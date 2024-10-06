@@ -396,6 +396,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &764736282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7981695628081968064, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
+  m_PrefabInstance: {fileID: 1743475509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &851822976
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,8 +435,10 @@ MonoBehaviour:
   _textMeshPro: {fileID: 851822978}
   _promptChance: 10
   cam: {fileID: 1190492029}
+  bar: {fileID: 560114496}
   optionOne: {fileID: 2050850579}
   optionTwo: {fileID: 8643312}
+  _canvas: {fileID: 764736282}
 --- !u!114 &851822978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,7 +783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nostalgia: {fileID: 560114496}
   timeUntilDecrease: 0.001
-  nostalgiaSpeed: 0.0025
+  nostalgiaSpeed: 0.0015
 --- !u!1 &1511105236
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,12 +948,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6486599839933955095, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486599839933955095, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 851822977}
     - target: {fileID: 6486599839933955095, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddChoiceOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399703135413407134, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7399703135413407134, guid: c2a6fe3e23fb55b4e996ef126b7e3c7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
