@@ -90,6 +90,7 @@ public class TextType : MonoBehaviour
 	void Start()
 	{
 		_currentWord = GetAWord();
+		NameMoviePrompt();
 	}
 
 	// Update is called once per frame
@@ -220,7 +221,6 @@ public class TextType : MonoBehaviour
 				indices[i] = -1;
 			}
 			choicesMade = 0;
-			NameMoviePrompt();
         }
 	}
 
