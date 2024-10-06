@@ -99,6 +99,7 @@ public class TextType : MonoBehaviour
 	{
 		_currentWord = GetAWord();
 		NameMoviePrompt();
+		Meter.start = false;
 	}
 
 	// Update is called once per frame
