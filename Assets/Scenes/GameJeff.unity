@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nostalgia: {fileID: 1271208262}
   timeUntilDecrease: 0.001
-  nostalgiaSpeed: 0.0015
+  nostalgiaSpeed: 0.025
 --- !u!1 &332463042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,7 +2145,7 @@ MonoBehaviour:
   cam: {fileID: 1190492029}
   posterchange: {fileID: 937996716}
   score: {fileID: 1676828298}
-  _promptChance: 10
+  _promptChance: 100
   bar: {fileID: 1271208262}
   ButtonOne: {fileID: 466436587}
   ButtonTwo: {fileID: 1079195625}
