@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nostalgia: {fileID: 1026950643}
   timeUntilDecrease: 0.001
-  nostalgiaSpeed: 0.015
+  nostalgiaSpeed: 0.004
 --- !u!1 &332463042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   posterchange: {fileID: 937996716}
   printerScript: {fileID: 332463045}
   score: {fileID: 1676828298}
-  _promptChance: 100
+  _promptChance: 8
   bar: {fileID: 1026950643}
   ButtonOne: {fileID: 466436587}
   ButtonTwo: {fileID: 1079195625}
