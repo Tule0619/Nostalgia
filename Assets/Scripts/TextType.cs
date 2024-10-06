@@ -244,6 +244,7 @@ public class TextType : MonoBehaviour
 				$"<font=\"Roboto-Regular SDF><size=190%>{_title.NewTitle()}" +
 				$"<size=100%></font><br><br>";
 			posterchange.changePoster();
+			Score.FinalScore = _title.Iteration;
 			printerScript.playSound();
         }
 	}

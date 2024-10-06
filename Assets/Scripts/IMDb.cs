@@ -7,6 +7,8 @@ public class IMDb
 {
     string title;
     int iteration;
+
+    public int Iteration { get { return iteration; } }
     
     string[] suffixes =
     {

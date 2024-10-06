@@ -169,9 +169,7 @@ public static class Storage
 			total += c.Nostalgia;
 		}
 
-		int finalScore = (int)(Mathf.Sqrt((total / max * 100))*10);
-		Score.FinalScore += finalScore;
-		return finalScore;
+		return (int)(Mathf.Sqrt((total / max * 100)) * 10);
 	}
 }
 
