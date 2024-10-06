@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -67,8 +68,6 @@ public class TextType : MonoBehaviour
 
 	[SerializeField] private GameObject _canvas;
 
-	private float gameScore;
-
 	private int[] indices = new int[] { -1, -1, -1, -1, -1, -1 };
 
 	[SerializeField] private GameObject _namePrompt;
@@ -79,7 +78,6 @@ public class TextType : MonoBehaviour
 
 	private IMDb _title;
 
-	private string _titleToDisplay;
 	#endregion
 
 	void Awake()
@@ -97,7 +95,6 @@ public class TextType : MonoBehaviour
 	{
 		_currentWord = GetAWord();
 		NameMoviePrompt();
-
 	}
 
 	// Update is called once per frame
