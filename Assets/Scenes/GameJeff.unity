@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nostalgia: {fileID: 1026950643}
   timeUntilDecrease: 0.001
-  nostalgiaSpeed: 0.015
+  nostalgiaSpeed: 0.004
 --- !u!1 &332463042
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 0}
+  m_AnchoredPosition: {x: 18, y: 52}
   m_SizeDelta: {x: 90.88751, y: 559.0552}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &550631964
@@ -1176,7 +1176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -435.05624, y: 19.972412}
+  m_AnchoredPosition: {x: -556.9, y: 126}
   m_SizeDelta: {x: 32.9, y: 271.8}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1026950643
@@ -1475,11 +1475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7240456083259271206, guid: 0f7a366caea97fd4bb8c9baa9103e832, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.78
+      value: 7.76
       objectReference: {fileID: 0}
     - target: {fileID: 7240456083259271206, guid: 0f7a366caea97fd4bb8c9baa9103e832, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.64
+      value: -3.28
       objectReference: {fileID: 0}
     - target: {fileID: 7240456083259271206, guid: 0f7a366caea97fd4bb8c9baa9103e832, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   posterchange: {fileID: 937996716}
   printerScript: {fileID: 332463045}
   score: {fileID: 1676828298}
-  _promptChance: 100
+  _promptChance: 8
   bar: {fileID: 1026950643}
   ButtonOne: {fileID: 466436587}
   ButtonTwo: {fileID: 1079195625}

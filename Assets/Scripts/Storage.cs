@@ -205,6 +205,6 @@ public class Choice
 	public void NotPicked()
 	{
 		if (count > 1)
-			nostalgia += Random.Range(0f, 0.5f);
+			nostalgia = Mathf.Min(nostalgia + Random.Range(0f, 0.5f), Storage.MAX_NOSTALGIA);
 	}
 }
