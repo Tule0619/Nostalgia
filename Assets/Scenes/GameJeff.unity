@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 682972765}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &304735047
@@ -742,6 +742,11 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &682972765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5847296750953204547, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+  m_PrefabInstance: {fileID: 1891081964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &702452186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,10 +1918,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NameMoviePrompt
       objectReference: {fileID: 0}
-    - target: {fileID: 710097361626873671, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1979,11 +1980,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2012,7 +2013,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6861596603276953430, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
   m_PrefabInstance: {fileID: 1891081964}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 682972765}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
