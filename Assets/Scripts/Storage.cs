@@ -192,7 +192,7 @@ public class Choice
     public void Picked()
     {
         if (count > 2)
-            nostalgia -= Random.Range(0.25f, 0.5f);
+            nostalgia -= Random.Range(0.25f, 1f);
         else if(count == 2)
             nostalgia = Storage.MAX_NOSTALGIA;
         
@@ -202,6 +202,6 @@ public class Choice
     public void NotPicked()
     {
         if (count > 1)
-            nostalgia += Random.Range(0f, 0.25f);
+            nostalgia += Random.Range(0f, 0.5f);
     }
 }

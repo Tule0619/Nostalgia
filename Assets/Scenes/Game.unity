@@ -783,7 +783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nostalgia: {fileID: 560114496}
   timeUntilDecrease: 0.001
-  nostalgiaSpeed: 0.0025
+  nostalgiaSpeed: 0.0015
 --- !u!1 &1511105236
 GameObject:
   m_ObjectHideFlags: 0
