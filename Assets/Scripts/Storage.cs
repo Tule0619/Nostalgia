@@ -168,7 +168,7 @@ public static class Storage
         foreach (Choice c in options) {
             total += c.Nostalgia;
         }
-        return (int)(total / max);
+        return (int)(Mathf.Sqrt((total / max * 100))*10);
     }
 }
 
@@ -186,7 +186,7 @@ public class Choice
     {
         this.title = title;
         count = 1;
-        nostalgia = 0.25f;
+        nostalgia = Random.Range(.5f,2f);
     }
 
     public void Picked()
