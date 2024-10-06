@@ -15,7 +15,7 @@ public class TextType : MonoBehaviour
 	private RectTransform _rectTransform;
 	[SerializeField] private PlayerInput _playerInput;
 
-
+	[SerializeField] AudioClip[] audioClips;
     #region Keyboard Mashing
     /// <summary>
     /// Current Wingding word
@@ -37,7 +37,7 @@ public class TextType : MonoBehaviour
     // Array to store lorem words
     private string[] words;
 	#endregion
-
+	[SerializeField] AudioSource player;
 	[SerializeField] private CameraMove cam;
 
     #region UI
@@ -89,6 +89,7 @@ public class TextType : MonoBehaviour
 	{
 		_currentWord = GetAWord();
 		NameMoviePrompt();
+
 	}
 
 	// Update is called once per frame
@@ -152,6 +153,14 @@ public class TextType : MonoBehaviour
 
 		_script.text += _currentWord[_currentChar];
 		_currentChar++;
+
+		if (Random.Range(0,5) < 3)
+		{
+            player.clip = audioClips[Random.Range(0, 5)];
+            player.Play();
+        }
+		
+
 	}
 
     #region User choice prompt
