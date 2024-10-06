@@ -14,7 +14,7 @@ public class ChangeScene : MonoBehaviour
     /// </summary>
     public void ChangeToGame() 
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameJeff");
     }
     /// <summary>
     /// Changes the current scene to the game screen

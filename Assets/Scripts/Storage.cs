@@ -15,7 +15,7 @@ public enum Options
 public static class Storage
 {
     public const float MAX_NOSTALGIA = 5f;
-    
+
     static Choice[] genres =
     {
         new Choice("Action"),
@@ -37,7 +37,7 @@ public static class Storage
         new Choice("Sir Gonealot"),
         new Choice("Ohio John"),
         new Choice("The Rectangle"),
-        new Choice("Rochester Reggie"),
+        new Choice("RITchie"),
         new Choice("Clyde"),
         new Choice("The Player"),
         new Choice("Lora Craft"),
@@ -51,7 +51,7 @@ public static class Storage
     {
         new Choice("The Giggler"),
         new Choice("Dork Wader"),
-        new Choice("The Evil Lizard Wizard of the South"),
+        new Choice("The Evil Lizard Wizard"),
         new Choice("Captain Moby"),
         new Choice("Pineconehead"),
         new Choice("Sansa"),
@@ -59,7 +59,7 @@ public static class Storage
         new Choice("The Hanging Tree"),
         new Choice("Doug"),
         new Choice("George Orwell"),
-        new Choice("Copywright Infringement Cory"),
+        new Choice("Copyright Infringement"),
         new Choice("Monster of the Week")
     };
 
@@ -86,7 +86,7 @@ public static class Storage
         new Choice("The Underworld"),
         new Choice("The 96.48 Acre Woods"),
         new Choice("In Space!"),
-        new Choice("In Another Universe..."),
+        new Choice("In Another Universe"),
         new Choice("Underground"),
         new Choice("Office Building"),
         new Choice("On the Sea"),
@@ -101,14 +101,14 @@ public static class Storage
         new Choice("High Speed Chase"),
         new Choice("A MacGuffin"),
         new Choice("Romantic Affair"),
-        new Choice("A Series of Miscommunications"),
-        new Choice("Discovering a Long-Lost Twin"),
-        new Choice("Deadly Traps & Daring Escapades"),
+        new Choice("A Series of Misfortunes"),
+        new Choice("Finding a Long-Lost Twin"),
+        new Choice("Dodging Deadly Traps"),
         new Choice("One Last Chance at Love"),
-        new Choice("A Town Too Small for the Two of Them"),
-        new Choice("What Happened Last Summer?"),
+        new Choice("Constant Power Struggles"),
+        new Choice("Distant Flashbacks"),
         new Choice("A Holdup"),
-        new Choice("An Expedition to Somewhere New...")
+        new Choice("A New World Expedition")
     };
 
     public static Choice[] GetOptions(Options option)
