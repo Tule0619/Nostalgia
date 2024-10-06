@@ -6,8 +6,8 @@ public class CameraMove : MonoBehaviour
 {
     [Tooltip("FInal position, used for moveCamUp()")]
     [SerializeField] float finalPos;
-    [Tooltip("Initial Position, should be set to where the camera starts. Used in moveCamDown()")]
-    [SerializeField] float initialPos;
+    
+    float initialPos;
     [Tooltip("Modifies the speed the camera moves, minimum of 0 to work correctly")]
     [SerializeField] public float speed;
 
@@ -49,9 +49,13 @@ public class CameraMove : MonoBehaviour
     {
         get { return transform.localScale; }
     }
-  
 
-    
+    private void Start()
+    {
+        initialPos = transform.position.y;
+    }
+
+
     /// <summary>
     /// Moves camera up until it hits finalPos. If overshoots, corrects to finalPos.
     /// </summary>
