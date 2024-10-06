@@ -161,8 +161,7 @@ public class TextType : MonoBehaviour
 
 		if (Random.Range(0,5) < 3)
 		{
-            player.clip = audioClips[Random.Range(0, 5)];
-            player.Play();
+            player.PlayOneShot(audioClips[Random.Range(0, 5)]);
         }
 		
 
