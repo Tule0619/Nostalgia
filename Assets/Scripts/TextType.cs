@@ -74,6 +74,10 @@ public class TextType : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _namePromptInputField;
 
 	private bool justStartedNewScript = false;
+
+	private IMDb _title;
+
+	private string _titleToDisplay;
 	#endregion
 
 	void Awake()
@@ -230,6 +234,10 @@ public class TextType : MonoBehaviour
 				indices[i] = -1;
 			}
 			choicesMade = 0;
+			_script.text = string.Empty;
+			_script.text += 
+				$"<font=\"Roboto-Regular SDF><size=190%>{_title.NewTitle()}" +
+				$"<size=100%></font><br><br>";
         }
 	}
 
@@ -254,17 +262,19 @@ public class TextType : MonoBehaviour
 		{
 			return;
 		}
-		print("here");
 		BackToGameplay(_namePromptInputField.text);
 	}
 
 	public void BackToGameplay(string name)
 	{
 		print(name);
-		_script.text = string.Empty;
 		_namePrompt.SetActive(false);
 		_playerInput.SwitchCurrentActionMap("Gameplay");
 		justStartedNewScript = true;
+		_title = new IMDb(name);
+		_script.text += 
+			$"<font=\"Roboto-Regular SDF><size=190%>{name}" +
+			$"<size=100%></font><br><br>";
     }
 	#endregion
 }
