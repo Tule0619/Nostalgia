@@ -1841,6 +1841,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3870048806474289330, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1919,6 +1923,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821453931419158616, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_GlobalFontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_text
+      value: Name your movie series!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3138095155293656105, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
