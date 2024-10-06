@@ -100,6 +100,7 @@ public class TextType : MonoBehaviour
 		_currentWord = GetAWord();
 		NameMoviePrompt();
 		Meter.start = false;
+		Storage.ResetChoices();
 	}
 
 	// Update is called once per frame

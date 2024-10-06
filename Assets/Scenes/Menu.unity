@@ -1470,21 +1470,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mash your keyboard to write new movies!
+  m_text: 'Mash your keyboard to write new movies.
 
 
-    Decide what your movies
-    will include!
+    Decide what characters and
+    themes your movies will include.
 
 
-    People will come back for nostalgia, but it wears thin quickly!
+    People will come back for nostalgia, but
+    it wears thin after a while...
 
 
-    Keep
-    them entertained with new ideas!
+    Keep them entertained with new ideas.
 
 
-    Don''t run out of nostalgia!'
+    Don''t
+    run out of nostalgia!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}
   m_sharedMaterial: {fileID: 1173443691465590583, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}

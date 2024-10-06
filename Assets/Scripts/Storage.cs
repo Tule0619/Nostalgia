@@ -171,6 +171,22 @@ public static class Storage
 
 		return (int)(Mathf.Sqrt((total / max * 100)) * 10);
 	}
+
+	public static void ResetChoices()
+	{
+        for (int i = 0; i < genres.Length; i++)
+            genres[i].Reset();
+        for (int i = 0; i < heroes.Length; i++)
+            heroes[i].Reset();
+        for (int i = 0; i < villains.Length; i++)
+            villains[i].Reset();
+        for (int i = 0; i < sidekicks.Length; i++)
+            sidekicks[i].Reset();
+        for (int i = 0; i < settings.Length; i++)
+            settings[i].Reset();
+        for (int i = 0; i < plots.Length; i++)
+            plots[i].Reset();
+    }
 }
 
 public class Choice
@@ -186,23 +202,28 @@ public class Choice
 	public Choice(string title)
 	{
 		this.title = title;
-		count = 1;
-		nostalgia = Random.Range(0.5f, 2f);
+		Reset();
 	}
 
 	public void Picked()
 	{
 		if (count > 2)
-			nostalgia -= Random.Range(0.5f, 1f);
+			nostalgia -= Random.Range(0.5f, 1.5f);
 		else if(count == 2)
 			nostalgia = Storage.MAX_NOSTALGIA;
 		
 		count++;
-
 	}
+
 	public void NotPicked()
 	{
 		if (count > 1)
 			nostalgia = Mathf.Min(nostalgia + Random.Range(0f, 0.5f), Storage.MAX_NOSTALGIA);
 	}
+
+	public void Reset()
+	{
+        count = 1;
+        nostalgia = Random.Range(0.5f, 2f);
+    }
 }
