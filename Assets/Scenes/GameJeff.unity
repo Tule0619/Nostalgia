@@ -2366,7 +2366,7 @@ MonoBehaviour:
   printerScript: {fileID: 332463045}
   score: {fileID: 1676828298}
   _promptChance: 100
-  bar: {fileID: 0}
+  bar: {fileID: 1026950643}
   ButtonOne: {fileID: 466436587}
   ButtonTwo: {fileID: 1079195625}
   optionOne: {fileID: 981301375}
