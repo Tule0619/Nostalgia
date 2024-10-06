@@ -53,7 +53,7 @@ public class IMDb
     public IMDb(string title)
     {
         this.title = title;
-        iteration = 0;
+        iteration = 1;
     }
     
     public string NewTitle()
