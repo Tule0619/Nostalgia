@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -56,6 +57,8 @@ public class TextType : MonoBehaviour
 
 	private float gameScore;
 
+	private int[] indices = new int[] { -1, -1, -1, -1, -1, -1 };
+
 	void Awake()
     {
         // Set up lorem and split
@@ -98,6 +101,7 @@ public class TextType : MonoBehaviour
 			foreach(Choice c in picked)
 			{
 				total += c.Nostalgia;
+				Debug.Log(c.Title+": "+c.Nostalgia);
 			}
 			Debug.Log(total);
 			bar.ChangeNostalgia(total);
@@ -105,6 +109,7 @@ public class TextType : MonoBehaviour
 			for(int i = 0; i < picked.Length; i++)
 			{
 				picked[i] = null;
+				indices[i] = -1;
 			}
 			choicesMade = 0;
         }
@@ -155,7 +160,19 @@ public class TextType : MonoBehaviour
 		_inPrompt = true;
 
 		_canvas.SetActive(true);
-        choices = Storage.GetOptions((Options)Random.Range(0, 6));
+		int rand;
+
+		if (choicesMade < 5)
+			while (indices.Contains(rand = Random.Range(0, 6)));
+		else {
+			int sum = 0;
+			for (int i = 0; i < 5; i++)
+				sum += indices[i];
+			rand = 15 - sum;
+		}
+		Debug.Log(rand);
+		indices[choicesMade] = rand;
+        choices = Storage.GetOptions((Options)indices[choicesMade]);
         optionOne.text = choices[0].Title;
         optionTwo.text = choices[1].Title;
 

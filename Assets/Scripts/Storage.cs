@@ -201,7 +201,7 @@ public class Choice
     }
     public void NotPicked()
     {
-        if (count > 2)
+        if (count > 1)
             nostalgia += Random.Range(0f, 0.25f);
     }
 }
