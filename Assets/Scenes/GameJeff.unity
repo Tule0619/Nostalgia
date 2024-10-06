@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nostalgia: {fileID: 1026950643}
   timeUntilDecrease: 0.001
-  nostalgiaSpeed: 0.025
+  nostalgiaSpeed: 0.015
 --- !u!1 &332463042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1316,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.5
+  orthographic size: 9.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1805,8 +1805,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+  m_sharedMaterial: {fileID: 3138095155293656105, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1953,6 +1953,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2048231944237522009, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 2048231944237522009, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3138095155293656105, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 2048231944237522009, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3870048806474289330, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -6.8
@@ -2041,6 +2053,18 @@ PrefabInstance:
       propertyPath: m_GlobalFontAsset
       value: 
       objectReference: {fileID: 11400000, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 6861596603276953430, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 6861596603276953430, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3138095155293656105, guid: b7d2f87427a1a4f7e99cb79053d913ad, type: 2}
+    - target: {fileID: 6861596603276953430, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9138058144152010399, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_text
       value: Name your movie series!

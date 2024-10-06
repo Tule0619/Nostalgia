@@ -189,13 +189,13 @@ public class Choice
 	{
 		this.title = title;
 		count = 1;
-		nostalgia = Random.Range(.5f,2f);
+		nostalgia = Random.Range(0.5f, 2f);
 	}
 
 	public void Picked()
 	{
 		if (count > 2)
-			nostalgia -= Random.Range(0.25f, 1f);
+			nostalgia -= Random.Range(0.5f, 1f);
 		else if(count == 2)
 			nostalgia = Storage.MAX_NOSTALGIA;
 		
