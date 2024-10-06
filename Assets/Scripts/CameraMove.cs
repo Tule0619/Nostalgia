@@ -65,7 +65,7 @@ public class CameraMove : MonoBehaviour
         transform.position += new Vector3(0, (finalPos * Time.deltaTime) * speed, 0);
         if (transform.position.y > finalPos)
         {
-            transform.position = new Vector3(0, finalPos, 0);
+            transform.position = new Vector3(0, finalPos, -25);
 
         }
         return transform.position.y;
@@ -80,7 +80,7 @@ public class CameraMove : MonoBehaviour
         transform.position += new Vector3(0, (finalPos * Time.deltaTime) * -speed, 0);
         if (transform.position.y < initialPos)
         {
-            transform.position = new Vector3(0, initialPos, 0);
+            transform.position = new Vector3(0, initialPos, -25);
         }
         return transform.position.y;
     }

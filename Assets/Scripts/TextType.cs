@@ -9,23 +9,23 @@ using UnityEngine.UI;
 
 public class TextType : MonoBehaviour
 {
-	[SerializeField] [Tooltip("TextMeshPro Object")] private TextMeshPro _textMeshPro;
+	[SerializeField] [Tooltip("TextMeshPro Object")] 
+	private TextMeshPro _script;
+	[SerializeField] [Tooltip("Rect Transform Component")] 
+	private RectTransform _rectTransform;
+	[SerializeField] private PlayerInput _playerInput;
 
-	/// <summary>
-	/// Current Wingding word
-	/// </summary>
-	private string _currentWord = string.Empty;
+
+    #region Keyboard Mashing
+    /// <summary>
+    /// Current Wingding word
+    /// </summary>
+    private string _currentWord = string.Empty;
 
 	/// <summary>
 	/// Current Wingding character
 	/// </summary>
 	private int _currentChar = 0;
-
-	[SerializeField] 
-	[Tooltip("Percent chance to prompt user for word choice after every word.")]
-	[Range(0, 100)] 
-	
-	private float _promptChance;
 
 	private int choicesMade;
 
@@ -36,16 +36,24 @@ public class TextType : MonoBehaviour
 
     // Array to store lorem words
     private string[] words;
+	#endregion
 
 	[SerializeField] private CameraMove cam;
 
-	[SerializeField]
-	NostalgiaBar bar;
+    #region UI
+	[SerializeField] 
+	[Tooltip("Percent chance to prompt user for word choice after every word.")]
+	[Range(0, 100)] 
+	private float _promptChance;
+    /// <summary>
+    /// Is the user currently being prompted for a word?
+    /// </summary>
+    private bool _inPrompt;
+	[SerializeField] NostalgiaBar bar;
 
-	/// <summary>
-	/// Is the user currently being prompted for a word?
-	/// </summary>
-	private bool _inPrompt;
+	[SerializeField] private Button ButtonOne;
+
+	[SerializeField] private Button ButtonTwo;
 
 	[SerializeField] private TextMeshProUGUI optionOne;
 
@@ -58,6 +66,13 @@ public class TextType : MonoBehaviour
 	private float gameScore;
 
 	private int[] indices = new int[] { -1, -1, -1, -1, -1, -1 };
+
+	[SerializeField] private GameObject _namePrompt;
+
+	[SerializeField] private TextMeshProUGUI _namePromptInputField;
+
+	private bool justStartedNewScript = false;
+	#endregion
 
 	void Awake()
     {
@@ -73,13 +88,13 @@ public class TextType : MonoBehaviour
 	void Start()
 	{
 		_currentWord = GetAWord();
+		NameMoviePrompt();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		//Scroll old text up
-		if (_textMeshPro.preferredHeight > GetComponent<RectTransform>().rect.height)
+		if(_script.preferredHeight > _rectTransform.rect.height)
 		{
 			DeleteWords();
 		}
@@ -92,27 +107,6 @@ public class TextType : MonoBehaviour
 		{
 			cam.moveCamDown();
 		}
-	
-
-		//new page of scripts
-        if (choicesMade == 6)
-        {
-			float total = 0;
-			foreach(Choice c in picked)
-			{
-				total += c.Nostalgia;
-				Debug.Log(c.Title+": "+c.Nostalgia);
-			}
-			Debug.Log(total);
-			bar.ChangeNostalgia(total);
-            _textMeshPro.text = "";
-			for(int i = 0; i < picked.Length; i++)
-			{
-				picked[i] = null;
-				indices[i] = -1;
-			}
-			choicesMade = 0;
-        }
     }
 
     /// <summary>
@@ -131,6 +125,11 @@ public class TextType : MonoBehaviour
 	public void OnType(InputAction.CallbackContext context)
 	{
 		if (!context.performed || _inPrompt) return;
+		if (justStartedNewScript)
+		{
+			justStartedNewScript = false;
+			return;
+		}
 
 		// Create end of a lorem ipsum word, change to next lorem ipsum word
 		if (_currentChar == _currentWord.ToString().Length)
@@ -143,7 +142,7 @@ public class TextType : MonoBehaviour
 			//Otherwise just go to next word.
 			else
 			{
-				_textMeshPro.text += ' ';
+				_script.text += ' ';
 			}
 
 			_currentWord = GetAWord();
@@ -151,45 +150,40 @@ public class TextType : MonoBehaviour
 			return;
 		}
 
-		_textMeshPro.text += _currentWord[_currentChar];
+		_script.text += _currentWord[_currentChar];
 		_currentChar++;
 	}
 
-	private void PromptUserForWord()
+    #region User choice prompt
+    private void PromptUserForWord()
 	{
 		_inPrompt = true;
 
 		_canvas.SetActive(true);
 		int rand;
-
-		if (choicesMade < 5)
-			while (indices.Contains(rand = Random.Range(0, 6)));
-		else {
-			int sum = 0;
-			for (int i = 0; i < 5; i++)
-				sum += indices[i];
-			rand = 15 - sum;
-		}
+		//Constantly rerolls rand until rand is a number that is not in indices
+		while (indices.Contains(rand = Random.Range(0, 6)));
 		Debug.Log(rand);
 		indices[choicesMade] = rand;
         choices = Storage.GetOptions((Options)indices[choicesMade]);
         optionOne.text = choices[0].Title;
         optionTwo.text = choices[1].Title;
+		SetButtons(true);
 
+		
 		cam.moveCamUp();
-        print("prompted");
 	}
 
 	private void DeleteWords()
 	{
-		_textMeshPro.text = _textMeshPro.text.Substring(15);
+		_script.text = _script.text.Substring(15);
 	}
 	public void AddChoiceOne()
 	{
 		picked[choicesMade] = choices[0];
 		choices[0].Picked();
 		choices[1].NotPicked();
-		_textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[0].Title} </font>";
+		_script.text += $"<font=\"Roboto-Regular SDF> {choices[0].Title} </font>";
 		ChoiceMade();
 	}
     public void AddChoiceTwo()
@@ -197,7 +191,7 @@ public class TextType : MonoBehaviour
         picked[choicesMade] = choices[1];
         choices[1].Picked();
         choices[0].NotPicked();
-        _textMeshPro.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
+		_script.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
 		ChoiceMade();
     }
 
@@ -206,6 +200,59 @@ public class TextType : MonoBehaviour
 		cam.moveCamDown();
 		choicesMade++;
 		_inPrompt = false;
+		SetButtons(false);
+		//new page of scripts
+        if (choicesMade == 6)
+        {
+			float total = 0;
+			foreach(Choice c in picked)
+			{
+				total += c.Nostalgia;
+				Debug.Log(c.Title+": "+c.Nostalgia);
+			}
+			Debug.Log(total);
+			bar.ChangeNostalgia(total);
+			for(int i = 0; i < picked.Length; i++)
+			{
+				picked[i] = null;
+				indices[i] = -1;
+			}
+			choicesMade = 0;
+        }
 	}
 
+	private void SetButtons(bool onOrOff)
+	{
+		ButtonOne.interactable = onOrOff;
+		ButtonTwo.interactable = onOrOff;
+	}
+    #endregion
+
+    #region Script Name prompt
+    public void NameMoviePrompt()
+	{
+		//Spawn Text input
+		_playerInput.SwitchCurrentActionMap("UI");
+		_namePrompt.SetActive(true);
+	}
+
+	public void SubmitTitle(InputAction.CallbackContext context)
+	{
+		if (!context.performed || _namePromptInputField.text.Length < 1)
+		{
+			return;
+		}
+		print("here");
+		BackToGameplay(_namePromptInputField.text);
+	}
+
+	public void BackToGameplay(string name)
+	{
+		print(name);
+		_script.text = string.Empty;
+		_namePrompt.SetActive(false);
+		_playerInput.SwitchCurrentActionMap("Gameplay");
+		justStartedNewScript = true;
+    }
+	#endregion
 }
