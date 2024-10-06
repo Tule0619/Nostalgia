@@ -60,6 +60,10 @@ public class TextType : MonoBehaviour
 
 	[SerializeField] private Button ButtonTwo;
 
+	[SerializeField] private AudioSource SoundButtonOne;
+
+	[SerializeField] private AudioSource SoundButtonTwo;
+
 	[SerializeField] private TextMeshProUGUI optionOne;
 
 	[SerializeField] private TextMeshProUGUI optionTwo;
@@ -196,6 +200,7 @@ public class TextType : MonoBehaviour
 		picked[choicesMade] = choices[0];
 		choices[0].Picked();
 		choices[1].NotPicked();
+		SoundButtonOne.Play();
 		_script.text += $"<font=\"Roboto-Regular SDF> {choices[0].Title} </font>";
 		ChoiceMade();
 	}
@@ -204,7 +209,8 @@ public class TextType : MonoBehaviour
         picked[choicesMade] = choices[1];
         choices[1].Picked();
         choices[0].NotPicked();
-		_script.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
+        SoundButtonTwo.Play();
+        _script.text += $"<font=\"Roboto-Regular SDF> {choices[1].Title} </font>";
 		ChoiceMade();
     }
 
