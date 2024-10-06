@@ -2016,13 +2016,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 350782575}
     m_Modifications:
     - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_fontSize
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}
     - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 1173443691465590583, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}
+    - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1948997457781211599, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2135,14 +2151,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4503262761522910393, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503262761522910393, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_fontSize
+      value: 9.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}
     - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 1173443691465590583, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}
+    - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4970129422574785242, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2178,6 +2218,14 @@ PrefabInstance:
     - target: {fileID: 6040365710383124792, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799387864639548462, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799387864639548462, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8027594284593143985, guid: 6f25beeed7750ef4aaac7c967576ebea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
