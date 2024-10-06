@@ -72,6 +72,10 @@ public class TextType : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _namePromptInputField;
 
 	private bool justStartedNewScript = false;
+
+	private IMDb _title;
+
+	private string _titleToDisplay;
 	#endregion
 
 	void Awake()
@@ -218,6 +222,7 @@ public class TextType : MonoBehaviour
 				indices[i] = -1;
 			}
 			choicesMade = 0;
+			_title.NewTitle();
         }
 	}
 
@@ -242,7 +247,6 @@ public class TextType : MonoBehaviour
 		{
 			return;
 		}
-		print("here");
 		BackToGameplay(_namePromptInputField.text);
 	}
 
@@ -253,6 +257,7 @@ public class TextType : MonoBehaviour
 		_namePrompt.SetActive(false);
 		_playerInput.SwitchCurrentActionMap("Gameplay");
 		justStartedNewScript = true;
+		_title = new IMDb(name);
     }
 	#endregion
 }

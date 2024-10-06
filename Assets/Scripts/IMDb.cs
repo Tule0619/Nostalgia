@@ -61,7 +61,9 @@ public class IMDb
         switch (++iteration) {
             case 1: return title;
             case 2: return title + " " + iteration;
-            default: return title + " " + iteration + (Random.Range(0, 2) == 0 ? ": " + suffixes[Random.Range(0, suffixes.Length)] : "");
+            default: return title + " " + iteration + 
+                    (Random.Range(0, 2) == 0 ? ": " + 
+                    suffixes[Random.Range(0, suffixes.Length)] : "");
         }
     }
 }
