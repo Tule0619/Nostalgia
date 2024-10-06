@@ -265,6 +265,7 @@ public class TextType : MonoBehaviour
 			return;
 		}
 		BackToGameplay(_namePromptInputField.text);
+		Meter.start = true;
 	}
 
 	public void BackToGameplay(string name)
@@ -279,4 +280,9 @@ public class TextType : MonoBehaviour
 			$"<size=100%></font><br><br>";
     }
 	#endregion
+}
+
+public static class Meter
+{
+    public static bool start = false;
 }

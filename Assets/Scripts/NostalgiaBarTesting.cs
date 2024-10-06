@@ -23,6 +23,8 @@ public class NostalgiaBarTesting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Meter.start) return;
+        
         // Update the time
         timer += Time.deltaTime;
 
