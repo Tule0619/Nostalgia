@@ -27,6 +27,5 @@ public class NostalgiaBarTesting : MonoBehaviour
 
         // Update the time
         nostalgia.ChangeNostalgia(-nostalgiaSpeed * Time.deltaTime);
-        Debug.Log(Time.deltaTime);
     }
 }
