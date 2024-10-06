@@ -40,6 +40,8 @@ public class TextType : MonoBehaviour
 
 	[SerializeField] private CameraMove cam;
 
+	[SerializeField]
+	private TextMeshProUGUI score;
     #region UI
 	[SerializeField] 
 	[Tooltip("Percent chance to prompt user for word choice after every word.")]
@@ -211,6 +213,7 @@ public class TextType : MonoBehaviour
 			}
 			Debug.Log(total);
 			bar.ChangeNostalgia(total);
+			score.text = (Storage.GetApproval(picked)).ToString() + "%";
 			for(int i = 0; i < picked.Length; i++)
 			{
 				picked[i] = null;
