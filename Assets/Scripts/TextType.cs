@@ -49,13 +49,7 @@ public class TextType : MonoBehaviour
     /// Is the user currently being prompted for a word?
     /// </summary>
     private bool _inPrompt;
-	[SerializeField]
-	NostalgiaBar bar;
-
-	/// <summary>
-	/// Is the user currently being prompted for a word?
-	/// </summary>
-	private bool _inPrompt;
+	[SerializeField] NostalgiaBar bar;
 
 	[SerializeField] private Button ButtonOne;
 
@@ -112,26 +106,6 @@ public class TextType : MonoBehaviour
 		{
 			cam.moveCamDown();
 		}
-
-		//new page of scripts
-        if (choicesMade == 6)
-        {
-			float total = 0;
-			foreach(Choice c in picked)
-			{
-				total += c.Nostalgia;
-				Debug.Log(c.Title+": "+c.Nostalgia);
-			}
-			Debug.Log(total);
-			bar.ChangeNostalgia(total);
-            _textMeshPro.text = "";
-			for(int i = 0; i < picked.Length; i++)
-			{
-				picked[i] = null;
-				indices[i] = -1;
-			}
-			choicesMade = 0;
-        }
     }
 
     /// <summary>
@@ -186,15 +160,8 @@ public class TextType : MonoBehaviour
 
 		_canvas.SetActive(true);
 		int rand;
-
-		if (choicesMade < 5)
-			while (indices.Contains(rand = Random.Range(0, 6)));
-		else {
-			int sum = 0;
-			for (int i = 0; i < 5; i++)
-				sum += indices[i];
-			rand = 15 - sum;
-		}
+		//Constantly rerolls rand until rand is a number that is not in indices
+		while (indices.Contains(rand = Random.Range(0, 6)));
 		Debug.Log(rand);
 		indices[choicesMade] = rand;
         choices = Storage.GetOptions((Options)indices[choicesMade]);
@@ -202,6 +169,7 @@ public class TextType : MonoBehaviour
         optionTwo.text = choices[1].Title;
 		SetButtons(true);
 
+		
 		cam.moveCamUp();
 	}
 
@@ -232,7 +200,25 @@ public class TextType : MonoBehaviour
 		choicesMade++;
 		_inPrompt = false;
 		SetButtons(false);
-		if (choicesMade == 1) NameMoviePrompt();
+		//new page of scripts
+        if (choicesMade == 6)
+        {
+			float total = 0;
+			foreach(Choice c in picked)
+			{
+				total += c.Nostalgia;
+				Debug.Log(c.Title+": "+c.Nostalgia);
+			}
+			Debug.Log(total);
+			bar.ChangeNostalgia(total);
+			for(int i = 0; i < picked.Length; i++)
+			{
+				picked[i] = null;
+				indices[i] = -1;
+			}
+			choicesMade = 0;
+			NameMoviePrompt();
+        }
 	}
 
 	private void SetButtons(bool onOrOff)
@@ -256,6 +242,7 @@ public class TextType : MonoBehaviour
 		{
 			return;
 		}
+		print("here");
 		BackToGameplay(_namePromptInputField.text);
 	}
 
