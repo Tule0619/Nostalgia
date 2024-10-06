@@ -41,6 +41,7 @@ public class TextType : MonoBehaviour
 	[SerializeField] AudioSource player;
 	[SerializeField] private CameraMove cam;
 	[SerializeField] private posters posterchange;
+	[SerializeField] printingSound printerScript;
 
 	[SerializeField]
 	private TextMeshProUGUI score;
@@ -237,6 +238,7 @@ public class TextType : MonoBehaviour
 				$"<font=\"Roboto-Regular SDF><size=190%>{_title.NewTitle()}" +
 				$"<size=100%></font><br><br>";
 			posterchange.changePoster();
+			printerScript.playSound();
         }
 	}
 
