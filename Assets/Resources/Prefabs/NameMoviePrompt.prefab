@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 4555445324095215895}
   - component: {fileID: 3405775055726964982}
   - component: {fileID: 2535642150954515466}
+  - component: {fileID: 2842214807436765368}
   m_Layer: 5
   m_Name: NameMoviePrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4555445324095215895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 710097361626873671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.03067113, y: 0.03067113, z: 0.03067113}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3870048806474289330}
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2842214807436765368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710097361626873671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e67448c6dea7e4b918635a3ee94a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _field: {fileID: 6821453931419158616}
 --- !u!1 &2856761825451442172
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +747,7 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: 9494c889fcaa1044f86d5a8b44734752, type: 2}
-  m_OnFocusSelectAll: 0
+  m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 0
   m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
