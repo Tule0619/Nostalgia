@@ -15,7 +15,7 @@ public class TextType : MonoBehaviour
 	private RectTransform _rectTransform;
 	[SerializeField] private PlayerInput _playerInput;
 
-
+	[SerializeField] AudioClip[] audioClips;
     #region Keyboard Mashing
     /// <summary>
     /// Current Wingding word
@@ -37,9 +37,11 @@ public class TextType : MonoBehaviour
     // Array to store lorem words
     private string[] words;
 	#endregion
-
+	[SerializeField] AudioSource player;
 	[SerializeField] private CameraMove cam;
 
+	[SerializeField]
+	private TextMeshProUGUI score;
     #region UI
 	[SerializeField] 
 	[Tooltip("Percent chance to prompt user for word choice after every word.")]
@@ -93,6 +95,7 @@ public class TextType : MonoBehaviour
 	{
 		_currentWord = GetAWord();
 		NameMoviePrompt();
+
 	}
 
 	// Update is called once per frame
@@ -156,6 +159,14 @@ public class TextType : MonoBehaviour
 
 		_script.text += _currentWord[_currentChar];
 		_currentChar++;
+
+		if (Random.Range(0,5) < 3)
+		{
+            player.clip = audioClips[Random.Range(0, 5)];
+            player.Play();
+        }
+		
+
 	}
 
     #region User choice prompt
@@ -216,6 +227,7 @@ public class TextType : MonoBehaviour
 			}
 			Debug.Log(total);
 			bar.ChangeNostalgia(total);
+			score.text = (Storage.GetApproval(picked)).ToString() + "%";
 			for(int i = 0; i < picked.Length; i++)
 			{
 				picked[i] = null;
