@@ -1807,10 +1807,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NameMoviePrompt
       objectReference: {fileID: 0}
-    - target: {fileID: 710097361626873671, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4555445324095215895, guid: 084d94e13bf193d4f8f71b777db8562c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
